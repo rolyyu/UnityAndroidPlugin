@@ -7,9 +7,12 @@ import android.os.BatteryManager;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Created by roly on 2017/7/27.
+ */
+
 public class AndroidPlugin
 {
-    // Needed to get the battery level.
     private Context context;
 
     public AndroidPlugin(Context context)
@@ -17,7 +20,7 @@ public class AndroidPlugin
         this.context = context;
     }
 
-    // Return the battery level as a float between 0 and 1 (1 being fully charged, 0 fulled discharged)
+    
     public float GetBatteryPct()
     {
         Intent batteryStatus = GetBatteryStatusIntent();
@@ -29,7 +32,6 @@ public class AndroidPlugin
         return batteryPct;
     }
 
-    // Return whether or not we're currently on charge
     public boolean IsBatteryCharging()
     {
         Intent batteryStatus = GetBatteryStatusIntent();
@@ -45,7 +47,6 @@ public class AndroidPlugin
         return context.registerReceiver(null, ifilter);
     }
 
-    //Get System Time
     public String getSysTime(){
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()).toString();
     }

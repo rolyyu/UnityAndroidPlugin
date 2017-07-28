@@ -16,7 +16,7 @@ public class BatteryMonitor : MonoBehaviour {
     static readonly string BATTERY_LEVEL_25 = Char.ConvertFromUtf32(0xf243);
     static readonly string BATTERY_LEVEL_0 = Char.ConvertFromUtf32(0xf244);
 
-    // Update is called once per frame
+
     void Update () {
         UpdateStatusIndicators();
         sysTime.text = BatteryLevelPlugin.GetSysTime();
@@ -28,7 +28,6 @@ public class BatteryMonitor : MonoBehaviour {
         var currentBatteryLevel = BatteryLevelPlugin.GetBatteryLevel() * 100f;
         batteryLevelText.text = String.Format("{0}%", currentBatteryLevel);
 
-        // Show the icon that matches the current level most closely.
         if (currentBatteryLevel >= 88)
         {
             batteryLevelIcon.text = BATTERY_LEVEL_100;

@@ -7,6 +7,9 @@ import android.widget.Toast;
 
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
+/**
+ * Created by roly on 2017/7/25.
+ */
 
 public class MainActivity extends UnityPlayerActivity {
 
